@@ -58,8 +58,7 @@ echo 'set fencs=cp936,utf-8,ucs-bom,gbk,gb18030,gb2312 ' >> ~/.vimrc
 #------------------------------------------------------#
 
 #-----------cut history log-----------------------------#
-export PROMPT_COMMAND='{ msg=$(history 1 | { read x y; echo $y; });user=$(whoami); echo $(date "+%Y-%m-%d %H:%M:%S"):$user:`pwd`/:$msg ---- $(who am i); } >> /tmp/`host
-name`.`whoami`.history-timestamp'
+export PROMPT_COMMAND='{ msg=$(history 1 | { read x y; echo $y; });user=$(whoami); echo $(date "+%Y-%m-%d %H:%M:%S"):$user:`pwd`/:$msg ---- $(who am i); } >> /tmp/`hostname`.`whoami`.history-timestamp'
 #-------------------------------------------------------#
 
 sed -i 's/exec \/sbin\/shutdown -r now "Control-Alt-Delete pressed"/#exec \/sbin\/shutdown -r now "Control-Alt-Delete pressed"/g' /etc/init/control-alt-delete.conf
