@@ -7,7 +7,7 @@ toping(){
 }
 
 ip=${1%.*}
-t=${2:-10}
+t=${2}
 
 [ $# -ne 2 ] && echo args err ! && exit 1
 
