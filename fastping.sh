@@ -10,7 +10,7 @@ ip=${1%.*}
 for i in $(seq 1 $2 254)
 do
   n=$i
-  while [ $n -lt $((i+$2)) ]
+  while [ $n -lt $((i+2)) ]
   do
       toping $ip.$n &
       n=$((n+1))
