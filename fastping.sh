@@ -1,16 +1,20 @@
 #!/bin/bash
 
+
 toping(){
   ping -c 1 -w 1 -q $1 > /dev/null
   [ $? -eq 0 ] && echo $1 is online...
 }
 
 ip=${1%.*}
+t=${2:-10}
+
+[ $# -ne 2 ] && echo args err ! && exit 1
 
 for i in $(seq 1 $2 254)
 do
   n=$i
-  while [ $n -lt $((i+2)) ]
+  while [ $n -lt $((i+t)) ]
   do
       toping $ip.$n &
       n=$((n+1))
