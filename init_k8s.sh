@@ -20,7 +20,7 @@ systemctl start ntpd
 systemctl disable postfix
 systemctl disable firewalld
 : > /etc/sysconfig/iptables
-systemctl enable iptables.service
+systemctl disable iptables.service
 
 
 cat >>/etc/security/limits.conf<<EOF
